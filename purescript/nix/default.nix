@@ -28,7 +28,6 @@ let
                   }
                   ''
                     nix-prefetch-git \
-                      --quiet \
                       --fetch-submodules \
                       --url ${spec.repo} \
                       --rev ${spec.version} > $out
