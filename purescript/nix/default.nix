@@ -28,7 +28,6 @@ let
                   }
                   ''
                     nix-prefetch-git \
-                      --quiet \
                       --fetch-submodules \
                       --url ${spec.repo} \
                       --rev ${spec.version} > $out
@@ -40,7 +39,7 @@ let
                 version = spec.version;
                 src = fetchgit {
                   url = spec.repo;
-                  rev = spec.version;
+                  rev = prefetch.rev;
                   sha256 = prefetch.sha256;
                 };
                 phases = "installPhase";
