@@ -14,6 +14,7 @@ def purescript_nixpkgs_packageset(
     name,
     nix_file,
     base_attribute_path,
+    nixopts,
     repositories = {},
     **kwargs):
 
@@ -34,12 +35,6 @@ def purescript_nixpkgs_packageset(
             "bazel_purescript_wrapper": "@com_habito_rules_purescript//purescript:nix/default.nix",
         },
         repositories,
-    )
-
-    nixopts = _purescript_nixpkgs_nixopts(
-        packageset_name = name,
-        nix_file = nix_file,
-        repositories = repositories,
     )
 
     nixpkgs_package(
