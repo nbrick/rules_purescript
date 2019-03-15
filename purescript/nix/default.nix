@@ -40,7 +40,7 @@ let
                 version = spec.version;
                 src = fetchgit {
                   url = spec.repo;
-                  rev = prefetch.rev;
+                  rev = spec.version
                   sha256 = prefetch.sha256;
                 };
                 phases = "installPhase";
